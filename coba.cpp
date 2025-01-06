@@ -17,7 +17,7 @@ cout<<"## Program C++ Aplikasi Kasir ##"<<endl;
 	long totalHarga = 0;
 	long jumlahBayar = 0;
 	
-	cout<<"# Selamat datang di Mini Market FARDHAN #"<<endl;
+	cout<<"# Selamat datang di Mini Market NAUFAL #"<<endl;
 	cout<<endl;
 	
 	cout<<"Masukkan jumlah barang yang ingin dibeli: ";
@@ -40,4 +40,40 @@ cout<<"## Program C++ Aplikasi Kasir ##"<<endl;
 		cout<<endl;
 	}
 	cout<<endl;
+	//orang ketiga
+	cout<<"-----------------------------------------------------"<<endl;
+	cout<<"####----		Struk Mini Market NAUFAL		----####"<<endl;
+	cout<<"-----------------------------------------------------"<<endl;
+	cout<<"No	Barang	Jumlah		Harga Satuan	Sub Total"<<endl;
+	for (int i=0; i<jumlahTotalBarang; i++){
+		cout<< setw(1) << i+1 << " ";
+		cout<< left << setw(12) << namaBarang[i];
+		cout<< right << setw(12) << jumlahBarang[i];
+		cout<< setw(18) << hargaBarang[i];
+		cout<< setw(15) << jumlahBarang[i]*hargaBarang[i];
+		cout<<endl;
+		totalHarga = totalHarga + (jumlahBarang[i]*hargaBarang[i]);
+	}
+	cout<<"-----------------------------------------------------"<<endl;
+	
+	cout<<"Total harga : Rp." << totalHarga <<endl<<endl;
+	
+	cout<<"Jumlah Bayar: Rp.";
+	cin>>jumlahBayar;
+	cout<<endl;
+	
+	while (jumlahBayar - totalHarga < 0) {
+		cout<<"Maaf, uang anda kurang. Mohon lakukan ulang pembayaran"<<endl;
+		cout<<"Jumlah Bayar: Rp.";
+		cin>>jumlahBayar;
+		cout<<endl;
+	}
+	
+	cout<<"Kembalian	: Rp." << jumlahBayar - totalHarga <<endl;
+	cout<<endl;
+	cout<<"-----------------------------------------------------"<<endl;
+	cout<<"####	Terimakasih sudah berbelanja, datang kembali  ####"<<endl;
+	cout<<"-----------------------------------------------------"<<endl;\
+	
+	return 0;
 }
